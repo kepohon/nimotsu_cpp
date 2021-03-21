@@ -1,3 +1,9 @@
+/*
+	Nimotsu.cpp
+	
+		EƒGƒ“ƒR[ƒfƒBƒ“ƒO‚ğshift-jis‚É•ÏX: 2021.3.21
+*/
+
 #include "Nimotsu.h"
 
 const char* defaultStageFile = "stageData.txt";
@@ -179,7 +185,7 @@ void Nimotsu::updateGame() {
 	if( key == 0 ) return;
 	// cout << "update Nimotsu" << endl;
 	
-	// ç§»å‹•æ–¹å‘
+	// ˆÚ“®•ûŒü
 	int dx = 0;
 	int dy = 0;
 	
@@ -203,32 +209,32 @@ void Nimotsu::updateGame() {
 	int x = i % stageWidth;
 	int y = i / stageWidth;
 	
-	// ç§»å‹•å¾Œã®åº§æ¨™ (tx, ty)
+	// ˆÚ“®Œã‚ÌÀ•W (tx, ty)
 	int tx = x + dx;
 	int ty = y + dy;
-	// åº§æ¨™ã®æœ€å¤§æœ€å°ã®ãƒã‚§ãƒƒã‚¯ã€‚ å¤–ã‚Œã¦ã„ã‚Œã°ä¸è¨±å¯
+	// À•W‚ÌÅ‘åÅ¬‚Ìƒ`ƒFƒbƒNB ŠO‚ê‚Ä‚¢‚ê‚Î•s‹–‰Â
 	if( tx < 0 || ty < 0 || tx >= stageWidth || ty >= stageHeight ){
 		return;
 	}
 	
-	// ç§»å‹•å…ˆãŒç©ºç™½ã¾ãŒã¯ã‚´ãƒ¼ãƒ«ãªã‚‰ã€äººãŒç§»å‹•
+	// ˆÚ“®æ‚ª‹ó”’‚Ü‚ª‚ÍƒS[ƒ‹‚È‚çAl‚ªˆÚ“®
 	int p = y * stageWidth + x;		// player
 	int tp = ty * stageWidth + tx;	// target
 	if( stateArray[ tp ] == OBJ_SPACE || stateArray[ tp ] == OBJ_GOAL ) {
-		// ç§»å‹•å…ˆãŒã‚´ãƒ¼ãƒ«ãªã‚‰ã‚´ãƒ¼ãƒ«ã®äººã«
+		// ˆÚ“®æ‚ªƒS[ƒ‹‚È‚çƒS[ƒ‹‚Ìl‚É
 		stateArray[ tp ] = ( stateArray[ tp ] == OBJ_GOAL )? OBJ_MAN_ON_GOAL : OBJ_MAN;
-		// ç§»å‹•å…ƒãŒã‚´ãƒ¼ãƒ«ãªã‚‰ã€ã‚´ãƒ¼ãƒ«ã«
+		// ˆÚ“®Œ³‚ªƒS[ƒ‹‚È‚çAƒS[ƒ‹‚É
 		stateArray[ p ] = ( stateArray[ p ] == OBJ_MAN_ON_GOAL )? OBJ_GOAL : OBJ_SPACE;
 	} else if ( stateArray[ tp ] == OBJ_BLOCK || stateArray[ tp ] == OBJ_BLOCK_ON_GOAL ) {
-		// 2ãƒã‚¹å…ˆãŒç¯„å›²å†…ã‹ãƒã‚§ãƒƒã‚¯
+		// 2ƒ}ƒXæ‚ª”ÍˆÍ“à‚©ƒ`ƒFƒbƒN
 		int tx2 = tx + dx;
 		int ty2 = ty + dy;
 		if( tx2 < 0 || ty2 < 0 || tx2 >= stageWidth || ty2 >= stageHeight ) {
-			return;		// æŠ¼ã›ãªã„
+			return;		// ‰Ÿ‚¹‚È‚¢
 		}
-		int tp2 = ( ty + dy ) * stageWidth + ( tx + dx );	// 2ãƒã‚¹å…ˆãŒç¯„å›²å†…ã‹ãƒã‚§ãƒƒã‚¯
+		int tp2 = ( ty + dy ) * stageWidth + ( tx + dx );	// 2ƒ}ƒXæ‚ª”ÍˆÍ“à‚©ƒ`ƒFƒbƒN
 		if( stateArray[ tp2 ] == OBJ_SPACE || stateArray[ tp2 ] == OBJ_GOAL ) {
-			// é †æ¬¡å…¥æ›¿
+			// ‡Ÿ“ü‘Ö
 			stateArray[ tp2 ] = ( stateArray[ tp2 ] == OBJ_GOAL )? OBJ_BLOCK_ON_GOAL : OBJ_BLOCK;
 			stateArray[ tp ] = ( stateArray[ tp ] == OBJ_BLOCK_ON_GOAL )? OBJ_MAN_ON_GOAL : OBJ_MAN;
 			stateArray[ p ] = ( stateArray[ p ] == OBJ_MAN_ON_GOAL )? OBJ_GOAL : OBJ_SPACE;

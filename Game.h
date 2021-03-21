@@ -1,3 +1,9 @@
+/*
+	Game.h
+	
+		EƒGƒ“ƒR[ƒfƒBƒ“ƒO‚ğshift-jis‚É•ÏX: 2021.3.21
+*/
+
 #ifndef _GAME_H_
 
 #define _GAME_H_
@@ -17,7 +23,7 @@ class Game {
 public:
 	Game();
 	~Game();
-	bool	initialize();		// é«˜ç²¾åº¦ã‚¿ã‚¤ãƒãƒ¼ã®åˆæœŸåŒ–
+	bool	initialize();		// ‚¸“xƒ^ƒCƒ}[‚Ì‰Šú‰»
 	bool	finalize();
 	
 	bool	isGameRunning();

@@ -1,10 +1,10 @@
-# makefile    (sample)
+# makefile    (ƒGƒ“ƒR[ƒh‚ğshift-jis‚É•ÏX: 2021.3.21)
 #	2021.2.2
 #
-# $@  ã‚¿ãƒ¼ã‚²ãƒƒãƒˆã®ãƒ•ã‚¡ã‚¤ãƒ«åã‚’è¡¨ã—ã¾ã™
-# $<  æœ€åˆã®å¿…é ˆé …ç›®ã®ãƒ•ã‚¡ã‚¤ãƒ«åã‚’è¡¨ã—ã¾ã™
-# $?  ã‚¿ãƒ¼ã‚²ãƒƒãƒˆã‚ˆã‚Šã‚‚å¾Œã§æ›´æ–°ã•ã‚ŒãŸå¿…é ˆã®é …ç›®ã‚’ã€ã‚¹ãƒšãƒ¼ã‚¹ã§åŒºåˆ‡ã£ãŸãƒªã‚¹ãƒˆã§è¡¨ã—ã¾ã™
-# $^  ã™ã¹ã¦ã®å¿…é ˆé …ç›®ã‚’ã‚¹ãƒšãƒ¼ã‚¹ã§åŒºåˆ‡ã£ãŸãƒªã‚¹ãƒˆã§è¡¨ã—ã¾ã™
+# $@  ƒ^[ƒQƒbƒg‚Ìƒtƒ@ƒCƒ‹–¼‚ğ•\‚µ‚Ü‚·
+# $<  Å‰‚Ì•K{€–Ú‚Ìƒtƒ@ƒCƒ‹–¼‚ğ•\‚µ‚Ü‚·
+# $?  ƒ^[ƒQƒbƒg‚æ‚è‚àŒã‚ÅXV‚³‚ê‚½•K{‚Ì€–Ú‚ğAƒXƒy[ƒX‚Å‹æØ‚Á‚½ƒŠƒXƒg‚Å•\‚µ‚Ü‚·
+# $^  ‚·‚×‚Ä‚Ì•K{€–Ú‚ğƒXƒy[ƒX‚Å‹æØ‚Á‚½ƒŠƒXƒg‚Å•\‚µ‚Ü‚·
 #
 # vpath pattern directory-list
 #   example =>  vpath %.c src
@@ -17,8 +17,9 @@ EXE=${NAME}.exe
 
 CC=g++
 
-CFLAGS=-finput-charset=UTF-8 -fexec-charset=CP932
-# CFLAGS=-finput-charset=UTF-8 -fexec-charset=CP932 -I include  # -I ã¯ã€ã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰ãƒ•ã‚¡ã‚¤ãƒ«ã®ãƒ•ã‚©ãƒ«ãƒ€ã‚’æŒ‡å®š
+CLFAGS=
+#CFLAGS=-finput-charset=UTF-8 -fexec-charset=CP932
+#CFLAGS=-finput-charset=UTF-8 -fexec-charset=CP932 -I include  # -I ‚ÍAƒCƒ“ƒNƒ‹[ƒhƒtƒ@ƒCƒ‹‚ÌƒtƒHƒ‹ƒ_‚ğw’è
 
 LFLAGS=
 
@@ -39,6 +40,3 @@ File.o: File.h
 clean:
 	del *.o
 #	del *.exe
-
-
-#c++ -o copy1b.exe copy1b.cpp -finput-charset=UTF-8 -fexec-charset=CP932

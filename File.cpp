@@ -1,7 +1,7 @@
 /*
-	file read
+	File.cpp
 	
-	g++ -o filetest.exe filetest.cpp File.cpp
+		・エンコーディングをshift-jisに変更: 2021.3.21
 */
 
 #include "File.h"

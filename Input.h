@@ -1,3 +1,9 @@
+/*
+	Input.h
+	
+		EƒGƒ“ƒR[ƒfƒBƒ“ƒO‚ğshift-jis‚É•ÏX: 2021.3.21
+*/
+
 #ifndef _INPUT_H_
 #define _INPUT_H_
 
@@ -19,7 +25,7 @@ public:
 	void	clearPressedKey();
 	
 private:
-	char	pressedKey;			// getKey()å†…ã§ã‚»ãƒƒãƒˆã•ã‚Œã‚‹
+	char	pressedKey;			// getKey()“à‚ÅƒZƒbƒg‚³‚ê‚é
 	
 };
 

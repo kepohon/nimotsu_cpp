@@ -1,10 +1,16 @@
+/*
+	Input.cpp
+	
+		・エンコーディングをshift-jisに変更: 2021.3.21
+*/
+
 #include "Input.h"
 
 
 Input::Input() : pressedKey(0) {}
 Input::~Input() {}
 
-// 菴輔°繧ｭ繝ｼ縺梧款縺輔ｌ縺溘ｉ縲∝�･蜉帙く繝ｼ繧定ｨ俶�ｶ縺吶ｋ
+// 何かキーが押されたら、入力キーを記憶する
 void Input::getKey() {
 	if( isHitKey() )
 		pressedKey = getch();

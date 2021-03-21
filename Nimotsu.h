@@ -1,3 +1,9 @@
+/*
+	Nimotsu.h
+	
+		・エンコーディングをshift-jisに変更: 2021.3.21
+*/
+
 #ifndef _NIMOTSU_H_
 #define _NIMOTSU_H_
 

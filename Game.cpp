@@ -1,3 +1,9 @@
+/*
+	Game.cpp
+	
+		EƒGƒ“ƒR[ƒfƒBƒ“ƒO‚ğshift-jis‚É•ÏX: 2021.3.21
+*/
+
 #include "Game.h"
 
 
@@ -41,7 +47,7 @@ void	Game::stopRunning()		{ nowRunning = false; }
 
 void	Game::run() {
 	
-	// ã“ã“ã§FPSæ™‚é–“ã®è¨ˆç®—ãŒå¿…è¦
+	// ‚±‚±‚ÅFPSŠÔ‚ÌŒvZ‚ª•K—v
     QueryPerformanceCounter(&timeEnd);
     frameTime = (float)(timeEnd.QuadPart - timeStart.QuadPart ) / (float)timerFreq.QuadPart;
     // Power saving code, requires winmm.lib

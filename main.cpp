@@ -1,3 +1,9 @@
+/*
+	main.cpp
+	
+		・エンコーディングをshift-jisに変更: 2021.3.21
+*/
+
 #include "Nimotsu.h"
 
 int main( int argc, char* argv[] ) {
