@@ -1,0 +1,62 @@
+# makefile    (sample)
+#	2021.2.2
+#
+# $@  ターゲットのファイル名を表します
+# $<  最初の必須項目のファイル名を表します
+# $?  ターゲットよりも後で更新された必須の項目を、スペースで区切ったリストで表します
+# $^  すべての必須項目をスペースで区切ったリストで表します
+#
+# vpath pattern directory-list
+#   example =>  vpath %.c src
+#
+
+NAME=nimotsu
+HEADER=Nimotsu.h Game.h Input.h File.h
+SRC=main.cpp Nimotsu.cpp Game.cpp Input.cpp File.cpp
+OBJ=main.o Nimotsu.o Game.o Input.o File.o
+EXE=main.exe
+
+CC=g++
+CFLAGS=-finput-charset=UTF-8 -fexec-charset=CP932
+# CFLAGS=-finput-charset=UTF-8 -fexec-charset=CP932 -I include  # -I は、インクルードファイルのフォルダを指定
+LFLAGS=
+
+#$(EXE): $(OBJ)
+#	${CC} -o $@ $^ ${LFLAGS}
+
+$(NAME).exe: $(OBJ)
+	$(CC) -o $@ $^ $(LFLAG)
+
+$(NAME).o: $(NAME).cpp Game.h
+	$(CC) -o $@ -c $(NAME).cpp $(CFLAG)
+
+Nimotsu.o: Nimotsu.cpp Nimotsu.h
+	$(CC) -o $@ -c Nimotsu.cpp $(CFLAG)
+
+Game.o: Game.cpp Game.h Input.h File.h
+	$(CC) -o $@ -c Game.cpp $(CFLAG)
+
+Input.o: Input.cpp Input.h
+	$(CC) -o $@ -c Input.cpp $(CFLAG)
+
+File.o: File.cpp File.h
+	$(CC) -o $@ -c File.cpp $(CFLAG)
+
+# ${NAME}.exe: ${NAME}.o InputStream.o
+#${NAME}.exe: ${OBJ}
+#	${CC} -o $@ $^ ${LFLAGS}
+#	${CC} -o $@ ${NAME}.o InputStream.o ${LFLAGS}
+
+#${OBJ}: $(SRC) ${HEAD}
+#	${CC} -o $@ -c $< ${CFLAGS}
+
+#.cpp.o: $(SRC) $(HEADER)
+#	${CC} -o $@ -c $< ${CFLAGS}
+
+#InputStream.o: InputStream.cpp InputStream.h
+#	${CC} -o $@ -c $< ${CFLAGS}
+
+clean:
+	del *.o
+
+#c++ -o copy1b.exe copy1b.cpp -finput-charset=UTF-8 -fexec-charset=CP932
